@@ -17,4 +17,6 @@ COPY --chown=jboss ./customization/. /opt/jboss/wildfly/customization
 
 USER jboss
 
-CMD ["/bin/bash", "/opt/jboss/wildfly/customization/execute.sh"]
+#CMD ["/bin/bash", "/opt/jboss/wildfly/customization/execute.sh"]
+ENTRYPOINT  ["/bin/bash", "/opt/jboss/wildfly/customization/execute.sh"]
+
