@@ -1,0 +1,21 @@
+# Default CLI script
+connect
+batch
+ 
+# Add oracle module
+module add --name=com.oracle --resources=/tmp/ojdbc8-12.2.0.1.0.jar --dependencies=javax.api,javax.transaction.api
+ 
+
+# Add oracle JDBC driver
+/subsystem=datasources/jdbc-driver=oracle:add( \
+    driver-name=oracle, \
+    driver-module-name=com.oracle, \
+    driver-class-name=oracle.jdbc.driver.OracleDriver \
+)
+ 
+
+
+
+# Execute and reload
+run-batch
+:reload

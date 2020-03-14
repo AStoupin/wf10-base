@@ -12,11 +12,20 @@ VOLUME /tmp
 
 COPY --chown=jboss ./ojdbc7.jar  /tmp
 
-COPY --chown=jboss ./customization/. /opt/jboss/wildfly/customization
+COPY --chown=jboss ./docker/customization/. /opt/jboss/wildfly/customization
 
+CMD  chmod +x /opt/jboss/wildfly/customization/build.sh  && \
+	 chmod +x /opt/jboss/wildfly/customization/execute.sh  && \
+	 chmod +x /opt/jboss/wildfly/customization/init.sh
+
+# pack custumizations into the image
+# use this template for packaging in extension layers
+CMD ["/bin/bash", "/opt/jboss/wildfly/customization/build.sh"]
 
 USER jboss
 
-#CMD ["/bin/bash", "/opt/jboss/wildfly/customization/execute.sh"]
 ENTRYPOINT  ["/bin/bash", "/opt/jboss/wildfly/customization/execute.sh"]
+
+
+
 

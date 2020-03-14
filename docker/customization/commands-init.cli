@@ -2,17 +2,7 @@
 connect
 batch
 
-# Add oracle module
-module add --name=com.oracle --resources=/tmp/ojdbc7.jar --dependencies=javax.api,javax.transaction.api
-
-
-# Add oracle JDBC driver
-/subsystem=datasources/jdbc-driver=oracle:add( \
-    driver-name=oracle, \
-    driver-module-name=com.oracle, \
-	driver-class-name=oracle.jdbc.driver.OracleDriver \
-)
-
+ 
 # Add a non-XA datasource
 data-source add \
     --name=DemoDS \
@@ -27,6 +17,10 @@ data-source add \
 
 data-source enable --name=DemoDS
 
+ 
+# Deploy the WAR example
+#deploy --name=helloworld.war -f /opt/jboss/wildfly/customization/$WAR_FILE_NAME
+ 
 
 # Execute and reload
 run-batch
