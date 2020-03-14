@@ -10,7 +10,7 @@ ENV WEBAPPS /opt/jboss/wildfly/standalone/deployments
 
 VOLUME /tmp
 
-COPY --chown=jboss ./ojdbc7.jar  /tmp
+COPY --chown=jboss ./docker/ojdbc7.jar  /tmp
 
 COPY --chown=jboss ./docker/customization/. /opt/jboss/wildfly/customization
 

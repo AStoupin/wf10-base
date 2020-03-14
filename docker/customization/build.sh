@@ -34,20 +34,9 @@ wait_for_server
 echo "=> Executing the commands - build phase"
 $JBOSS_CLI -c --file=`dirname "$0"`/commands-build.cli
 
- 
-
- 
-
- 
-
 echo "=> Shutting down WildFly - build phase"
-
 if [ "$JBOSS_MODE" = "standalone" ]; then
-
   $JBOSS_CLI -c ":shutdown"
-
 else
-
   $JBOSS_CLI -c "/host=*:shutdown"
-
 fi
