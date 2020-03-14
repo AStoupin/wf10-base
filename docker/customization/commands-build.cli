@@ -3,7 +3,7 @@ connect
 batch
  
 # Add oracle module
-module add --name=com.oracle --resources=/tmp/ojdbc8-12.2.0.1.0.jar --dependencies=javax.api,javax.transaction.api
+module add --name=com.oracle --resources=/tmp/ojdbc7.jar --dependencies=javax.api,javax.transaction.api
  
 
 # Add oracle JDBC driver
