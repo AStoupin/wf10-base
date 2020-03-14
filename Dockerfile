@@ -19,8 +19,7 @@ RUN  chmod +x /opt/jboss/wildfly/customization/build.sh  && \
 
 # pack custumizations into the image
 # use this template for packaging in extension layers
-RUN /bin/bash /opt/jboss/wildfly/customization/build.sh && \
-    rm -r /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
+RUN /bin/bash /opt/jboss/wildfly/customization/build.sh
 
 
 USER jboss

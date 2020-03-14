@@ -40,3 +40,5 @@ if [ "$JBOSS_MODE" = "standalone" ]; then
 else
   $JBOSS_CLI -c "/host=*:shutdown"
 fi
+echo "=> Self-swept commands  - build phase"
+rm -r /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
