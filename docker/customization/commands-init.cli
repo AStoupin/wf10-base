@@ -19,7 +19,7 @@ data-source enable --name=DemoDS
 
  
 # Deploy the WAR example
-#deploy --name=helloworld.war -f /opt/jboss/wildfly/customization/$WAR_FILE_NAME
+#deploy --name=helloworld.war --path=/opt/jboss/wildfly/customization/${env.WAR_FILE_NAME}
  
 
 # Execute and reload

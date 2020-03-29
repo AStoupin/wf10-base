@@ -42,3 +42,4 @@ else
 fi
 echo "=> Self-swept commands  - build phase"
 rm -r /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
+rm -r /opt/jboss/wildfly/standalone/log
